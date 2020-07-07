@@ -1,0 +1,26 @@
+Following howto guide from 
+https://medium.com/@olinations/build-a-crud-template-using-react-bootstrap-express-postgres-9f84cc444438
+
+--- Initial Command line ---
+
+npm init -y
+npm install express body-parser pg knew dotenv helmet cors morgan
+npm install nodemon
+
+-- Updated package.json --
+
+Minor changes to env variable
+
+-- created index.js --
+
+Setup Express, app.get calls, DB connection, added some security features.
+
+-- created /controllers/main.js --
+
+4 Primary DB calls for Read, Add, Update, Delete
+#TODO DB Call - prefferedDrinks
+#TODO DB Call - prefferedRoutes
+#TODO DB Call - friends
+#TODO DB Call - barBlacklist
+
+

@@ -1,0 +1,31 @@
+{
+  "name": "user_info",
+  "version": "1.0.0",
+  "description": "User data page version 3",
+  "main": "index.js",
+  "scripts": {
+    "start":"nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GalvanizeGroup3/user_info.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GalvanizeGroup3/user_info/issues"
+  },
+  "homepage": "https://github.com/GalvanizeGroup3/user_info#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.23.3",
+    "knew": "0.0.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4",
+    "pg": "^8.2.2"
+  }
+}
