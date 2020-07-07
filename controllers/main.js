@@ -1,5 +1,6 @@
 // Returns All data from table 
 const getTableData = (req, res, db) => {
+    console.log("In the database Get")
     db.select('*').from('user_data')
       .then(items => {
         if(items.length){

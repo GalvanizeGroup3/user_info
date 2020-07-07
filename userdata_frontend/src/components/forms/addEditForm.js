@@ -102,12 +102,12 @@ class AddEditForm extends React.Component {
           <Input type="text" name="last" id="last" onChange={this.onChange} value={this.state.lastname === null ? '' : this.state.lastname}  />
         </FormGroup>
         <FormGroup>
-          <Label for="email">Address</Label>
-          <Input type="email" name="homeaddress" id="homeaddress" onChange={this.onChange} value={this.state.homeaddress === null ? '' : this.state.homeaddress}  placeholder="City, State"/>
+          <Label for="address">Address</Label>
+          <Input type="text" name="homeaddress" id="homeaddress" onChange={this.onChange} value={this.state.homeaddress === null ? '' : this.state.homeaddress}  placeholder="City, State"/>
         </FormGroup>
         <FormGroup>
-          <Label for="phone">Email</Label>
-          <Input type="text" name="email" id="email" onChange={this.onChange} value={this.state.email === null ? '' : this.state.email}  placeholder="johnDoe@gmail.com" />
+          <Label for="email">Email</Label>
+          <Input type="email" name="email" id="email" onChange={this.onChange} value={this.state.email === null ? '' : this.state.email}  placeholder="johnDoe@gmail.com" />
         </FormGroup>
 
         <Button>Submit</Button>
@@ -115,12 +115,12 @@ class AddEditForm extends React.Component {
     );
   }
 }
-{/* <FormGroup>
-<Label for="location">Location</Label>
-<Input type="text" name="location" id="location" onChange={this.onChange} value={this.state.location === null ? '' : this.state.location}  placeholder="City, State" />
-</FormGroup>
-<FormGroup>
-<Label for="hobby">Hobby</Label>
-<Input type="text" name="hobby" id="hobby" onChange={this.onChange} value={this.state.hobby}  />
-</FormGroup> */}
+//{ <FormGroup>
+//<Label for="location">Location</Label>
+//<Input type="text" name="location" id="location" onChange={this.onChange} value={this.state.location === null ? '' : this.state.location}  placeholder="City, State" />
+//</FormGroup>
+//<FormGroup>
+//<Label for="hobby">Hobby</Label>
+//<Input type="text" name="hobby" id="hobby" onChange={this.onChange} value={this.state.hobby}  />
+//</FormGroup> }
 export default AddEditForm

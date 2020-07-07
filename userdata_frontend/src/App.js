@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
-import ModalForm from './components/modals/modal'
+import ModalForm from './components/modal/modal'
 import DataTable from './components/tables/dataTable'
-import { CSVLink } from "react-csv"
+//import { CSVLink } from "react-csv"
 
 class App extends Component {
   state = {
@@ -59,14 +59,7 @@ class App extends Component {
         </Row>
         <Row>
           <Col>
-            <CSVLink
-              filename={"db.csv"}
-              color="primary"
-              style={{float: "left", marginRight: "10px"}}
-              className="btn btn-primary"
-              data={this.state.items}>
-              Download CSV
-            </CSVLink>
+
             <ModalForm buttonLabel="Add Item" addItemToState={this.addItemToState}/>
           </Col>
         </Row>
@@ -76,3 +69,13 @@ class App extends Component {
 }
 
 export default App
+
+// Line 62 If needed to reimplement
+//{ <CSVLink
+//filename={"db.csv"}
+//color="primary"
+//style={{float: "left", marginRight: "10px"}}
+//className="btn btn-primary"
+//data={this.state.items}>
+//Download CSV
+//</CSVLink> }

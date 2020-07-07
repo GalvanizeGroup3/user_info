@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Table, Button } from 'reactstrap';
-import ModalForm from '../modals/modal'
+import ModalForm from '../modal/modal'
 
 class DataTable extends Component {
 
@@ -69,5 +69,5 @@ class DataTable extends Component {
     )
   }
 }
-
+// Note several columns blank place holders until 
 export default DataTable
