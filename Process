@@ -23,4 +23,52 @@ Setup Express, app.get calls, DB connection, added some security features.
 #TODO DB Call - friends
 #TODO DB Call - barBlacklist
 
+-- Commit 1 -- 
 
+npm start
+    -- successfully opened local host with "hello world"
+
+-- Established DB -- 
+
+created /db_setup/db_setup.js
+    -- Create "user_data" tables
+created /db_setup/users.js 
+    -- used for initial run of db_setup.js
+
+-- React App --
+npx create-react-app userdata_frontend
+npm install bootstrap 
+npm install reactstrap react react-dom
+npm install react-csv
+    -- Not sure the exact purpose of these plug-in #TODO research later
+
+-- building out file structure --
+created /src/components/forms/addEditForm.js
+created /src/components/modal/modal.js
+created /src/components/tables/dataTable.js
+
+-- Minor Cosmetic items --
+updated app.css
+setup index.js to use bootstrap
+
+-- App.js --- 
+
+Copied template as-is
+###TODO upate to more appropriate data
+#TODO  Deeper look at some of the functions in app.js
+
+-- dataTable.js --
+
+copied template with minor updates
+###TODO add additional fields and functionality specific to project
+
+-- modal.js --
+
+copies template as-is
+    -- This file shortcuts some button functionality using predefeined react act scripts
+    -- Review later...but should work as is
+
+-- addEditForm.js -- 
+
+Copied Template with significant modifications
+##TODO include additional functionality specific to project

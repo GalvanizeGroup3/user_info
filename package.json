@@ -4,7 +4,7 @@
   "description": "User data page version 3",
   "main": "index.js",
   "scripts": {
-    "start":"nodemon index.js"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "express": "^4.17.1",
     "helmet": "^3.23.3",
     "knew": "0.0.0",
+    "knex": "^0.21.1",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.4",
     "pg": "^8.2.2"

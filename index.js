@@ -28,6 +28,7 @@ const main = require('./controllers/main') //db queries
 
 const app = express()
 
+const whitelist = ['http://localhost:3001'] //Allows front end communication through port 3001
 const corsOptions = { // Can I haz evil code?  Please delete if possible
     origin: function (origin, callback){
         if (whitelist.indexOf(origin) !== -1 || !origin){
