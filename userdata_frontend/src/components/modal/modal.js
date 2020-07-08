@@ -15,6 +15,10 @@ class ModalForm extends Component {
       modal: !prevState.modal
     }))
   }
+// ##TODO Need to create a branching Render for different views.   
+// Page 1 Login Page -- email/password fields -- check database return userId/User Role
+// Page 2 Admin Page (if role is admin) -- display all users and buttons
+// Page 3 User page (if role != admin) -- pull userid -- display thier data + buttons for update profile/addfriends/addroutes/adddrinks
 
   render() {
       const closeBtn = <button className="close" onClick={this.toggle}>&times;</button> //&times;  Not sure what that does
@@ -30,14 +34,22 @@ class ModalForm extends Component {
                   onClick={this.toggle}
                   style={{float: "left", marginRight:"10px"}}>{label}
                 </Button>
-        title = 'Edit Item'
+        title = 'Edit User'
+      } else if(label === 'Add Friends'){
+        button = <Button
+                    color="warning"
+                    onClick={this.toggle}
+                    style={{float: "left", marginRight:"10px"}}>{label}
+                </Button>
+        title = 'Add Friends'
+          
       } else {
         button = <Button
                   color="success"
                   onClick={this.toggle}
                   style={{float: "left", marginRight:"10px"}}>{label}
                 </Button>
-        title = 'Add New Item'
+        title = 'Add New User'
       }
 
 

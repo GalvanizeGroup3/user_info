@@ -31,9 +31,17 @@ CREATE TABLE user_data(
     preferredRoutes text,
     friends text,
     barBlacklist text
+    password varchar(64)
     )
     `);
 
+    await pool.query(`
+CREATE TABLE friends(
+    id serial PRIMARY KEY,
+    user_id int,
+    friend_id int
+    )
+    `);
 //#TODO create join tables for preferredDrinks, preferredRoutes, Friends, barBlacklist
 
         console.log("Complete!");

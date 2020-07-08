@@ -80,3 +80,18 @@ Copied Template with significant modifications
     -- server/db startup lcoalhost:3000
 ./user_info/userdata_frontend/npm start -y
     -- Application startup localhost:3001
+
+
+--- Bug Fixes ---
+Removed "added" field from main.js postTableData
+Reassigned passed in varible used for userId in delete function  (from id to userid) in main.js
+Reassigned variables used for table updates from data.id & item.id to data.userid & item.userid in app.js
+
+-- Login Funcitonality --
+Added "password varchar(64)" field to db_setup.js
+Updated app.js, addEditForm.js, main.js to submit password with new and edit user forms
+## TODO Using hasing to submit and check password -- https://nodejs.org/api/crypto.html
+
+-- Friends Functionality -- 
+added mutliselect friends field to NewUser and EditUser modal in addEditForm.js
+Created join table "friends"  fields id, userid, friendid.

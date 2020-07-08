@@ -35,9 +35,12 @@ class DataTable extends Component {
           <td>{item.email}</td>
           <td>Blank</td>
           <td>Blank</td>
+          <td>blank</td>
           <td>
             <div style={{width:"110px"}}>
               <ModalForm buttonLabel="Edit" item={item} updateState={this.props.updateState}/>
+              {' '}
+              <ModalForm buttonLabel="Add Friends" item={item} updateState={this.props.updateState}/>
               {' '}
               <Button color="danger" onClick={() => this.deleteItem(item.userid)}>Del</Button>
             </div>
@@ -58,6 +61,7 @@ class DataTable extends Component {
             <th>Drinks</th>
             <th>Routes</th>
             <th>Friends</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>

@@ -23,7 +23,8 @@ class App extends Component {
   }
 
   updateState = (item) => {
-    const itemIndex = this.state.items.findIndex(data => data.id === item.id)
+    // ##Fixed updated data.id and item.id to appropirate data.userid & item.userid
+    const itemIndex = this.state.items.findIndex(data => data.userid === item.userid)
     const newArray = [
     // destructure all items from beginning to the indexed item
       ...this.state.items.slice(0, itemIndex),
@@ -60,7 +61,7 @@ class App extends Component {
         <Row>
           <Col>
 
-            <ModalForm buttonLabel="Add Item" addItemToState={this.addItemToState}/>
+            <ModalForm buttonLabel="New User" addItemToState={this.addItemToState}/>
           </Col>
         </Row>
       </Container>
