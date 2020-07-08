@@ -1,10 +1,12 @@
 // Returns All data from table 
+
 const getTableData = (req, res, db) => {
-    console.log("In the database Get")
+
     db.select('*').from('user_data')
       .then(items => {
         if(items.length){
           res.json(items)
+          //console.log(db)
         } else {
           res.json({dataExists: 'false'})
         }

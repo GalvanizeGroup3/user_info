@@ -41,7 +41,7 @@ class DataTable extends Component {
             <div style={{width:"110px"}}>
               <ModalForm buttonLabel="Edit" item={item} updateState={this.props.updateState}/>
               {' '}
-              <Button color="danger" onClick={() => this.deleteItem(item.id)}>Del</Button>
+              <Button color="danger" onClick={() => this.deleteItem(item.userid)}>Del</Button>
             </div>
           </td>
         </tr>
@@ -70,4 +70,4 @@ class DataTable extends Component {
   }
 }
 // Note several columns blank place holders until 
-export default DataTable
+export default DataTable;

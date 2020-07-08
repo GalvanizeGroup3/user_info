@@ -20,7 +20,7 @@ class AddEditForm extends React.Component {
 
   submitFormAdd = e => {
     e.preventDefault()
-    fetch('http://localhost:3000/crud', {
+    fetch('http://localhost:3000/users', {
       method: 'post',
       headers: {
         'Content-Type': 'application/json'
@@ -123,4 +123,4 @@ class AddEditForm extends React.Component {
 //<Label for="hobby">Hobby</Label>
 //<Input type="text" name="hobby" id="hobby" onChange={this.onChange} value={this.state.hobby}  />
 //</FormGroup> }
-export default AddEditForm
+export default AddEditForm;
