@@ -17,7 +17,7 @@ class ModalForm extends Component {
   }
 
   render() {
-      const closeBtn = <button className="close" onClick={this.toggle}>&times;</button>
+      const closeBtn = <button className="close" onClick={this.toggle}>&times;</button> //&times;  Not sure what that does
 
       const label = this.props.buttonLabel
 

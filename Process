@@ -72,3 +72,11 @@ copies template as-is
 
 Copied Template with significant modifications
 ##TODO include additional functionality specific to project
+
+
+-- Service Startup -- 
+
+./user_info/npm start
+    -- server/db startup lcoalhost:3000
+./user_info/userdata_frontend/npm start -y
+    -- Application startup localhost:3001

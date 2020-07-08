@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Table, Button } from 'reactstrap';
 import ModalForm from '../modal/modal'
-
+console.log("about to create table")
 class DataTable extends Component {
 
   deleteItem = id => {
@@ -22,11 +22,9 @@ class DataTable extends Component {
       })
       .catch(err => console.log(err))
     }
-
   }
 
   render() {
-
     const items = this.props.items.map(item => {
       return (
         <tr key={item.userid}>

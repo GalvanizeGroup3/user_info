@@ -1,5 +1,5 @@
 // Returns All data from table 
-
+console.log("Made it to the database functions")
 const getTableData = (req, res, db) => {
 
     db.select('*').from('user_data')

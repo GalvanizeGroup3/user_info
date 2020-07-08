@@ -1,3 +1,8 @@
+/////////////
+//  DrinkNav Joint Project -- User information access project
+//  Disabled Everything CORS related to prevent conflicts
+///////////
+
 const express = require('express')
 require('dotenv').config()  //Keep for now... 
 
@@ -16,17 +21,7 @@ var db = require('knex')({
   }
 });
 
-// Standard way to connect to Postgres -- Using template for the moment 
-// const Pool = require('pg').Pool  //standard library object for connecting to DB
-// const pool = new Pool({
-//   user: 'me',
-//   host: 'localhost',
-//   database: 'users',
-//   password: '!QAZxsw2',
-//   port: 5432, //5432 is Postgres default
-
 const main = require('./controllers/main') //db queries
-
 const app = express()
 
 // const whitelist = ['http://localhost:5432'] //Allows front end communication through port 3001

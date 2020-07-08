@@ -19,6 +19,7 @@ class AddEditForm extends React.Component {
   }
 
   submitFormAdd = e => {
+      console.log("attempting to add new user")
     e.preventDefault()
     fetch('http://localhost:3000/users', {
       method: 'post',
@@ -45,10 +46,11 @@ class AddEditForm extends React.Component {
           console.log('failure')
         }
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log("This is my error",err))
   }
 
   submitFormEdit = e => {
+    console.log("attempting to edit existing item")
     e.preventDefault()
     fetch('http://localhost:3000/users', {
       method: 'put',
@@ -94,15 +96,15 @@ class AddEditForm extends React.Component {
     return (
       <Form onSubmit={this.props.item ? this.submitFormEdit : this.submitFormAdd}>
         <FormGroup>
-          <Label for="first">First Name</Label>
-          <Input type="text" name="first" id="first" onChange={this.onChange} value={this.state.firstname === null ? '' : this.state.firstname} />
+          <Label for="firstname">First Name</Label>
+          <Input type="text" name="firstname" id="firstname" onChange={this.onChange} value={this.state.firstname === null ? '' : this.state.firstname} />
         </FormGroup>
         <FormGroup>
-          <Label for="last">Last Name</Label>
-          <Input type="text" name="last" id="last" onChange={this.onChange} value={this.state.lastname === null ? '' : this.state.lastname}  />
+          <Label for="lastname">Last Name</Label>
+          <Input type="text" name="lastname" id="lastname" onChange={this.onChange} value={this.state.lastname === null ? '' : this.state.lastname}  />
         </FormGroup>
         <FormGroup>
-          <Label for="address">Address</Label>
+          <Label for="homeaddress">Address</Label>
           <Input type="text" name="homeaddress" id="homeaddress" onChange={this.onChange} value={this.state.homeaddress === null ? '' : this.state.homeaddress}  placeholder="City, State"/>
         </FormGroup>
         <FormGroup>

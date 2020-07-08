@@ -2,9 +2,9 @@
   "name": "user_info",
   "version": "1.0.0",
   "description": "User data page version 3",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
