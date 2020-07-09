@@ -1,7 +1,6 @@
 // Returns All data from table 
 console.log("Made it to the database functions")
 const getTableData = (req, res, db) => {
-
     db.select('*').from('user_data')
       .then(items => {
         if(items.length){
@@ -19,7 +18,7 @@ const getTableData = (req, res, db) => {
     const { firstname, lastname , homeaddress, email, password} = req.body
     const added = new Date()
     db('user_data').insert({ firstname, lastname , homeaddress, email, password}) //removed field "added" just noted this was a time stamp for creation 
-      .returning('temp_id')
+      .returning('*')
       //console.log(user_id)
       .then(item => {
         res.json(item)
@@ -41,7 +40,7 @@ const getTableData = (req, res, db) => {
     }
 
     const postFriendData = (req, res, db) => {
-        const { friend_id } = req.body
+        const { user_id, friend_id } = req.body
         db('friends').insert({ user_id, friend_id}) //removed field "added"
         .returning('*')
         .then(item => {

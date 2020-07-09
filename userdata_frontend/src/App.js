@@ -2,17 +2,16 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'reactstrap'
 import ModalForm from './components/modal/modal'
 import DataTable from './components/tables/dataTable'
-//import { CSVLink } from "react-csv"
 
 class App extends Component {
   state = {
     items: []
   }
 
-  getItems(){
+  getItems() {
     fetch('http://localhost:3000/users')
       .then(response => response.json())
-      .then(items => this.setState({items}))
+      .then(items => this.setState({ items }))
       .catch(err => console.log(err))
   }
 
@@ -26,11 +25,11 @@ class App extends Component {
     // ##Fixed updated data.id and item.id to appropirate data.userid & item.userid
     const itemIndex = this.state.items.findIndex(data => data.userid === item.userid)
     const newArray = [
-    // destructure all items from beginning to the indexed item
+      // destructure all items from beginning to the indexed item
       ...this.state.items.slice(0, itemIndex),
-    // add the updated item to the array
+      // add the updated item to the array
       item,
-    // add the rest of the items to the array from the index after the replaced item
+      // add the rest of the items to the array from the index after the replaced item
       ...this.state.items.slice(itemIndex + 1)
     ]
     this.setState({ items: newArray })
@@ -41,7 +40,7 @@ class App extends Component {
     this.setState({ items: updatedItems })
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.getItems()
   }
 
@@ -50,7 +49,7 @@ class App extends Component {
       <Container className="App">
         <Row>
           <Col>
-            <h1 style={{margin: "20px 0"}}>User Data</h1>
+            <h1 style={{ margin: "20px 0" }}>User Data</h1>
           </Col>
         </Row>
         <Row>
@@ -60,8 +59,7 @@ class App extends Component {
         </Row>
         <Row>
           <Col>
-
-            <ModalForm buttonLabel="New User" addItemToState={this.addItemToState}/>
+            <ModalForm buttonLabel="New User" addItemToState={this.addItemToState} />
           </Col>
         </Row>
       </Container>
@@ -70,13 +68,3 @@ class App extends Component {
 }
 
 export default App;
-
-// Line 62 If needed to reimplement
-//{ <CSVLink
-//filename={"db.csv"}
-//color="primary"
-//style={{float: "left", marginRight: "10px"}}
-//className="btn btn-primary"
-//data={this.state.items}>
-//Download CSV
-//</CSVLink> }

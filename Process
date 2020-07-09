@@ -95,3 +95,6 @@ Updated app.js, addEditForm.js, main.js to submit password with new and edit use
 -- Friends Functionality -- 
 added mutliselect friends field to NewUser and EditUser modal in addEditForm.js
 Created join table "friends"  fields id, userid, friendid.
+#TODO extending functions to insert friends appropriately
+
+-- Dockerize -- 
