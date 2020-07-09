@@ -98,3 +98,12 @@ Created join table "friends"  fields id, userid, friendid.
 #TODO extending functions to insert friends appropriately
 
 -- Dockerize -- 
+
+Created root Dockerfile, app dockerfile, and docker-compose.yml
+Moved SQL to cloud solution for better integration -- **ElephantSQL** 
+Fixed several misc issues in order facilitate dockerization
+
+-- Next Step --
+Push Data to partners --  How?
+Pull data from partners -- How? 
+

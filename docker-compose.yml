@@ -10,23 +10,5 @@ services:
 
     main-project:
         build: .
-        depends_on:
-            - 'postgres'
         ports:
             - '3000:3000'
-        environment:
-            - PGUSER=me
-            - PGHOST=postgres
-            - PGDATABASE=users
-            - PGPASSWORD=!QAZxsw2
-            - PGPORT=5432
-
-    postgres: 
-        image: postgres:latest
-        environment:
-            - POSTGRES_USER=me
-            - POSTGRES_PASSWORD=!QAZxsw2
-            - POSTGRES_DB=users
-        volumes:
-            - ./init.sql:/docker-entrypoint-initdb.d/db_setup/db_setup.sql
-            - ./postgres-data:/var/lib/postgresql/data

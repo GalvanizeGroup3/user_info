@@ -1,16 +1,18 @@
   
 const pg = require('pg');
-const queries = require("../src/models/users.js");
+const queries = require("./users.js");
 
 (async () => {
 
     const Pool = pg.Pool
     const pool = new Pool({
-        user: 'me',
-        host: 'localhost',
-        database: 'users',
-        password: '!QAZxsw2',
-        port: 5432,
+        connectionString: "postgres://xlpucsdl:Yc0OCuq_vNxDzDne9M2dbCtPQXUg65T2@ruby.db.elephantsql.com:5432/xlpucsdl",
+        max: 3
+        // user: 'me',
+        // host: 'localhost',
+        // database: 'users',
+        // password: '!QAZxsw2',
+        // port: 5432,
     })
 
 try { //Primarily used for testing and rebuilding DB 
@@ -30,18 +32,18 @@ CREATE TABLE user_data(
     preferredDrinks text,
     preferredRoutes text,
     friends text,
-    barBlacklist text
+    barBlacklist text,
     password varchar(64)
     )
     `);
 
-    await pool.query(`
-CREATE TABLE friends(
-    id serial PRIMARY KEY,
-    user_id int,
-    friend_id int
-    )
-    `);
+//     await pool.query(`
+// CREATE TABLE friends(
+//     id serial PRIMARY KEY,
+//     user_id int,
+//     friend_id int
+//     )
+//     `);
 //#TODO create join tables for preferredDrinks, preferredRoutes, Friends, barBlacklist
 
         console.log("Complete!");

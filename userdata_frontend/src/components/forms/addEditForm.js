@@ -1,3 +1,9 @@
+// #TODO 
+// preferreddrinks: this.state.preferreddrinks, //to be implemented
+    // preferredroutes: this.state.preferredroutes, //to be implemented
+    // barblacklist: this.state.barblacklist //to be implemented
+
+
 import React from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
@@ -91,34 +97,31 @@ class AddEditForm extends React.Component {
             })
             .catch(err => console.log(err))
     }
-    // preferreddrinks: this.state.preferreddrinks, //to be implemented
-    // preferredroutes: this.state.preferredroutes, //to be implemented
-    // friends: this.state.friends, //to be implemented
-    // barblacklist: this.state.barblacklist //to be implemented
-    addFriends = e => { //ADD user submisssion
-        console.log("attempting to add new user")
-        e.preventDefault()
-        fetch('http://localhost:3000/users', {
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                user_id: this.temp.userid,
-                friend_id: this.friend_id
-            })
-        })
-            .then(response => response.json())
-            .then(item => {
-                if (Array.isArray(item)) {
-                    this.props.addItemToState(item[0])
-                    this.props.toggle()
-                } else {
-                    console.log('failure')
-                }
-            })
-            .catch(err => console.log("This is my error", err))
-    }
+ 
+    // addFriends = e => { //ADD user submisssion
+    //     console.log("attempting to add new user")
+    //     e.preventDefault()
+    //     fetch('http://localhost:3000/users', {
+    //         method: 'post',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({
+    //             user_id: this.temp.userid,
+    //             friend_id: this.friend_id
+    //         })
+    //     })
+    //         .then(response => response.json())
+    //         .then(item => {
+    //             if (Array.isArray(item)) {
+    //                 this.props.addItemToState(item[0])
+    //                 this.props.toggle()
+    //             } else {
+    //                 console.log('failure')
+    //             }
+    //         })
+    //         .catch(err => console.log("This is my error", err))
+    // }
 
 
     componentDidMount() {

@@ -9,15 +9,19 @@ require('dotenv').config()  //Keep for now...
 const helmet = require('helmet') //security feature? 
 const bodyParser = require('body-parser')  //Json to usable data ** highly important
 //const cors = require('cors') //Evil program of doom....can i delete?
+
 const morgan = require('morgan') // some sort of logging
 var db = require('knex')({
   client: 'pg',
   connection: {
-      host: 'localhost',
-      user: 'me',
-      password: '!QAZxsw2',
-      database: 'users',
-      port: 5432
+      connectionString: "postgres://xlpucsdl:Yc0OCuq_vNxDzDne9M2dbCtPQXUg65T2@ruby.db.elephantsql.com:5432/xlpucsdl",
+      max: 3
+      //##TODO create env variable to grab password for security purposes 
+      // host: 'localhost',
+      // user: 'me',
+      // password: '!QAZxsw2',
+      // database: 'users',
+      // port: 5432
   }
 });
 
@@ -45,6 +49,8 @@ app.get('/users', (req, res) => main.getTableData(req,res,db))
 app.post('/users', (req, res) => main.postTableData(req,res,db))
 app.put('/users', (req, res) => main.putTableData(req,res,db))
 app.delete('/users', (req,res) => main.deleteTableData(req,res,db))
+app.post('/friendsAdd', (req,res) => main.postFriendData(req,res,db))
+app.get('/friends', (req,res) => main.getLastTableEntry(req,res,db))
 
 app.listen(process.env.PORT || 3000, () => {
     console.log(`App is running on port ${process.env.PORT || 3000}`)
