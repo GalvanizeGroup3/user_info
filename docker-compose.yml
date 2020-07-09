@@ -1,22 +1,32 @@
-version: "2"
+version: "3"
 services:
-  practice_docker: 
-    image: bbarnhi/user_info
-    ports: 
-      - 3000:3000
-    command: bash -c 'while !</dev/tcp/db/5432; do sleep 1; done; npm start'
-    depends_on:
-      - db
-    environment:
-      - DATABASE_URL=postgres://me:!QAZxsw2d@db:5432/users
-      - PORT=3000   
-  db:
-    image: postgres
-    expose:
-        - 5432
-    volumes: 
-        - ./users.sql:/docker-entrypoint-initdb.d/users.sql
-    environment:
-      - POSTGRES_USER=me
-      - POSTGRES_PASSWORD=!QAZxsw2
-      - POSTGRES_DB=users
+    database-frontend:
+        build: userdata_frontend/
+        depends_on:
+            - 'main-project'
+        ports: 
+            - '3001:3000'
+        stdin_open: true
+
+    main-project:
+        build: .
+        depends_on:
+            - 'postgres'
+        ports:
+            - '3000:3000'
+        environment:
+            - PGUSER=me
+            - PGHOST=postgres
+            - PGDATABASE=users
+            - PGPASSWORD=!QAZxsw2
+            - PGPORT=5432
+
+    postgres: 
+        image: postgres:latest
+        environment:
+            - POSTGRES_USER=me
+            - POSTGRES_PASSWORD=!QAZxsw2
+            - POSTGRES_DB=users
+        volumes:
+            - ./init.sql:/docker-entrypoint-initdb.d/db_setup/db_setup.sql
+            - ./postgres-data:/var/lib/postgresql/data
