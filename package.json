@@ -4,7 +4,7 @@
   "description": "User data page version 3",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "npm start & ./userdata_frontend/npm start"
   },
   "repository": {
     "type": "git",
