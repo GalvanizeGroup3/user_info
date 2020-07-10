@@ -41,6 +41,7 @@ const getTableData = (req, res, db) => {
 
     const postFriendData = (req, res, db) => {
         const { user_id, friend_id } = req.body
+        console.log("Adding new friends to join table ")
         db('friends').insert({ user_id, friend_id}) //removed field "added"
         .returning('*')
         .then(item => {

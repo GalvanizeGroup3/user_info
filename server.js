@@ -44,13 +44,18 @@ app.use(helmet())  //some sort of magic security -- research later
 app.use(bodyParser.json()) //readable json
 app.use(morgan('combined')) // logging 
 
+//Internal datacalls
 app.get('/', (req, res) => res.send('hello world'))
 app.get('/users', (req, res) => main.getTableData(req,res,db))
 app.post('/users', (req, res) => main.postTableData(req,res,db))
 app.put('/users', (req, res) => main.putTableData(req,res,db))
 app.delete('/users', (req,res) => main.deleteTableData(req,res,db))
+//Friend Join Table
 app.post('/friendsAdd', (req,res) => main.postFriendData(req,res,db))
 app.get('/friends', (req,res) => main.getLastTableEntry(req,res,db))
+//external datacalls
+app.get('/drinkList', (req,res) => main.getDrinkData(req,res,db))
+app.get('/userDrinks', (req,res) => main.getUserDrinks(req,res,db))
 
 app.listen(process.env.PORT || 3000, () => {
     console.log(`App is running on port ${process.env.PORT || 3000}`)
